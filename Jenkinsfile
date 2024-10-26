@@ -1,4 +1,3 @@
-Jenkinsfile (Scripted Pipeline)
 node {  
     stage('Restore dependencies') { 
         bat 'dotnet restore'
