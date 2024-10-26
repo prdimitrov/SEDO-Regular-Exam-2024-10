@@ -1,16 +1,16 @@
 node {
     stage('Restore dependencies') {
-        dir('HouseRentingSystem.Tests') {  
-            bat 'dotnet restore'
+        dir('') {
+            bat 'dotnet restore HouseRentingSystem.sln'
         }
     }
     stage('Build') {
-        dir('HouseRentingSystem.Tests') {
-            bat 'dotnet build --no-restore'
+        dir('') {
+            bat 'dotnet build HouseRentingSystem.sln --no-restore'
         }
     }
     stage('Test') {
-        dir('HouseRentingSystem.Tests') {
+        dir('HouseRentingSystem.Tests') {  // Navigate to the test project directory
             bat 'dotnet test --no-build --verbosity normal'
         }
     }
